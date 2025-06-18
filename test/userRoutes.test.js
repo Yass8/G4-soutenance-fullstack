@@ -4,5 +4,4 @@ test('GET /users', async () => {
     expect(response.status).toBe(200);
     const data = await response.json();
     expect(Array.isArray(data)).toBe(true);
-}
-);
+});

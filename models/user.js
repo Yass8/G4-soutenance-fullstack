@@ -2,7 +2,7 @@
 import {
   Model
 }  from 'sequelize';
-export default (sequelize, DataTypes) => {
+const User =  (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       // define association here
@@ -20,3 +20,5 @@ export default (sequelize, DataTypes) => {
   });
   return User;
 };
+
+export default User;

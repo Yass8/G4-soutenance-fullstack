@@ -1,12 +1,15 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
-import User  from '../models/user.js';
+import db  from '../models/index.js';
 
+const { User } = db;
 const usrerRoutes = express.Router();
 
-usrerRoutes.get("/", (req, res) => {
+usrerRoutes.get("/", async (req, res) => {
     try {
-        const users = User.findAll();
+        const users = await User.findAll({
+            attributes: ['id', 'firstname', 'lastname', 'email', 'role'],
+        });
         res.status(200).json(users);
     } catch (error) {
         console.error('Error fetching users:', error);

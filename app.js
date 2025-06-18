@@ -1,11 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-
-
 import express from 'express';
-// const fileUpload = require('express-fileupload');
-// app.use(fileUpload());
 
 const app = express();
 app.use(express.json());
